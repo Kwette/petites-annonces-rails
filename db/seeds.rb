@@ -37,7 +37,7 @@ puts "Users are done :)"
 puts "Creating published advertisements..."
 
 first_ad = Advertisement.new
-first_ad.title = 'First Advertisement'
+first_ad.name = 'First Advertisement'
 first_ad.content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
@@ -47,7 +47,7 @@ first_ad.user_id = '1'
 first_ad.save!
 
 second_ad = Advertisement.new
-second_ad.title = 'Second Advertisement'
+second_ad.name = 'Second Advertisement'
 second_ad.content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
@@ -57,7 +57,7 @@ second_ad.user_id = '1'
 second_ad.save!
 
 third_ad = Advertisement.new
-third_ad.title = 'Third Advertisement'
+third_ad.name = 'Third Advertisement'
 third_ad.content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
@@ -70,7 +70,7 @@ puts "Published advertisements are done :)"
 puts "Creating waiting advertisements..."
 
 fourth_ad = Advertisement.new
-fourth_ad.title = 'Fourth Advertisement'
+fourth_ad.name = 'Fourth Advertisement'
 fourth_ad.content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
@@ -80,7 +80,7 @@ fourth_ad.user_id = '1'
 fourth_ad.save!
 
 fifth_ad = Advertisement.new
-fifth_ad.title = 'Fifth Advertisement'
+fifth_ad.name = 'Fifth Advertisement'
 fifth_ad.content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
@@ -90,7 +90,7 @@ fifth_ad.user_id = '2'
 fifth_ad.save!
 
 sixth_ad = Advertisement.new
-sixth_ad.title = 'Sixth Advertisement'
+sixth_ad.name = 'Sixth Advertisement'
 sixth_ad.content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'

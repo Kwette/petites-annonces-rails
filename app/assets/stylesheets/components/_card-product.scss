@@ -33,7 +33,13 @@
   width: 100%;
 }
 
-.card-product .card-product-infos  p{
+.card-product .card-product-infos p {
   margin-top: inherit;
   margin: 0.5em;
+}
+span.publisher {
+  // font-style: italic;
+  font-size: 0.8em;
+  font-weight: lighter;
+  opacity: 0.5;
 }

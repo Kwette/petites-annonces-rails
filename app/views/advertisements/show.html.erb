@@ -16,7 +16,7 @@
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
       <div class="card-trip-infos">
         <div>
-          <h2 class="mb-2"><%= @advertisement.title.capitalize %> by <%= @advertisement.user.name.capitalize %></h2>
+          <h2 class="mb-2"><%= @advertisement.name.capitalize %> by <%= @advertisement.user.name.capitalize %></h2>
           <p class="mb-2"><%= @advertisement.content %></p>
           <% if  current_user != nil && current_user.role == "admin"  %>
             <p style="color: #67CC81"><strong>State : </strong><%= @advertisement.state %></p>

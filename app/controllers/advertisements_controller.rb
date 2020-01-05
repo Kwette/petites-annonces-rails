@@ -1,5 +1,5 @@
 class AdvertisementsController < ApplicationController
-  # before_action :set_advertisement, only: [:show, :edit, :update, :destroy]
+  before_action :set_advertisement, only: [:show, :edit, :update, :destroy]
 
   def publish
     @advertisement = Advertisement.find(params[:id])
@@ -86,6 +86,6 @@ class AdvertisementsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def advertisement_params
-    params.require(:advertisement).permit(:title, :content, :state, :price, :user_id)
+    params.require(:advertisement).permit(:name, :content, :state, :price, :user_id)
   end
 end

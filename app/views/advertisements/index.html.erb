@@ -10,7 +10,7 @@
     <div class="card-product-infos d-flex align-items-center justify-content-between">
       <div class="flex-grow-1">
         <div class="d-flex">
-          <h2 class="mb-2"><%= advertisement.title.capitalize %> <span>by <%= advertisement.user.name.capitalize %></span></h2>
+          <h2 class="mb-2"><%= advertisement.name.capitalize %> <span>by <%= advertisement.user.name.capitalize %></span></h2>
           <% if current_user != nil && current_user.role == "admin"  %>
           <p class="ml-4" style="color: #67CC81">Statut : <strong><%= advertisement.state %> ...</strong></p>
           <% end %>
@@ -33,7 +33,7 @@
     <div class="card-product-infos d-flex align-items-center justify-content-between">
       <div class="flex-grow-1">
         <div class="d-flex">
-          <h2 class="mb-2"><%= advertisement.title.capitalize %> <span>by <%= advertisement.user.name.capitalize %></span></h2>
+          <h2 class="mb-2"><%= advertisement.name.capitalize %> <span class="publisher">by <%= advertisement.user.name.capitalize %></span></h2>
           <p class="ml-4" style="color: #67CC81">Statut : <strong><%= advertisement.state %> ...</strong></p>
         </div>
         <p><%= advertisement.content.capitalize %></p>
