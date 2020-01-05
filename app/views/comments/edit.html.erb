@@ -1,0 +1,8 @@
+<div class="container-show pt-4 pb-4 mt-4 mb-4">
+  <h1 class="mt-4 pt-4 mb-4 pb-4">Edit your Comment</h1>
+
+<%= render 'form', comment: @comment %>
+
+<%= link_to 'Show', advertisement_comment_path(@comment), class: 'btn btn-flat' %> |
+<%= link_to 'Back', advertisement_path(@comment), class: 'btn btn-flat' %>
+</div>

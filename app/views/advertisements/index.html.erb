@@ -1,0 +1,52 @@
+<div class="container-show ">
+  <!--------------------------------- ADVERTISEMENTS ------------------------------->
+  <h1 class="pb-4">Advertisements <span class="ml-4"><%= link_to "Publish yours", new_advertisement_path, class: 'btn btn-flat ml-0' %></span> </h1>
+  <% @advertisements.each do |advertisement|  %>
+  <!-------------------------------- INDEX FOR GUEST ------------------------------->
+  <% if current_user == nil || current_user.role != "admin"  %>
+  <% if advertisement.state == "published" %>
+  <div class="card-product mt-4 mb-4">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos d-flex align-items-center justify-content-between">
+      <div class="flex-grow-1">
+        <div class="d-flex">
+          <h2 class="mb-2"><%= advertisement.title.capitalize %> <span>by <%= advertisement.user.name.capitalize %></span></h2>
+          <% if current_user != nil && current_user.role == "admin"  %>
+          <p class="ml-4" style="color: #67CC81">Statut : <strong><%= advertisement.state %> ...</strong></p>
+          <% end %>
+        </div>
+        <p><%= advertisement.content.capitalize %></p>
+        <p><%= advertisement.price %> €</p>
+      </div>
+      <div>
+        <p><%= link_to 'Show', advertisement, class: 'btn btn-flat btn-show' %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+
+  <!--------------------------------- INDEX FOR ADMIN ------------------------------->
+  <% if current_user != nil && current_user.role == "admin" %>
+  <div class="card-product mt-4 mb-4">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos d-flex align-items-center justify-content-between">
+      <div class="flex-grow-1">
+        <div class="d-flex">
+          <h2 class="mb-2"><%= advertisement.title.capitalize %> <span>by <%= advertisement.user.name.capitalize %></span></h2>
+          <p class="ml-4" style="color: #67CC81">Statut : <strong><%= advertisement.state %> ...</strong></p>
+        </div>
+        <p><%= advertisement.content.capitalize %></p>
+        <p><%= advertisement.price %> €</p>
+      </div>
+      <div>
+        <p><%= link_to 'Show', advertisement, class: 'btn btn-flat btn-show' %></p>
+        <!-- <p><%= link_to 'Edit', edit_advertisement_path(advertisement), class: 'btn btn-flat btn-show' %></p> -->
+        <p><%= link_to 'Destroy', advertisement, class: 'btn btn-flat btn-show', method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+  <!--------------------------------------- END -------------------------------------->
+</div>

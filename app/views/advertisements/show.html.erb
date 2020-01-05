@@ -1,0 +1,58 @@
+<div class="d-flex align-items-center" >
+  <div class="container-show">
+    <!----------------------------- SHOW ADVERTISEMENT ----------------------------->
+    <div class="mb-4 d-flex align-items-center">
+      <h1 class="mr-4">Advertisement</h1>
+       <% if  current_user != nil && current_user.name == @advertisement.user.name %>
+         <%= link_to 'Edit', edit_advertisement_path(@advertisement), class: 'btn btn-flat ml-0' %> |
+      <% end %>
+      <%= link_to 'Back', advertisements_path, class: 'btn btn-flat' %>
+      <!--   <%= link_to 'Destroy', advertisement_path(@advertisement), class: 'btn btn-flat', method: :delete, data: { confirm: 'Are you sure?' } %> -->
+      <% if current_user != nil && current_user.role == "admin" &&  @advertisement.state != "published" %>
+      | <%= link_to 'Publish', advertisement_publish_advertisement_path(@advertisement), class: 'btn btn-flat', method: :patch %>
+      <% end %>
+    </div>
+    <div class="card-trip mb-4">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2 class="mb-2"><%= @advertisement.title.capitalize %> by <%= @advertisement.user.name.capitalize %></h2>
+          <p class="mb-2"><%= @advertisement.content %></p>
+          <% if  current_user != nil && current_user.role == "admin"  %>
+            <p style="color: #67CC81"><strong>State : </strong><%= @advertisement.state %></p>
+          <% end %>
+        </div>
+        <h2 class="card-trip-pricing"><%= @advertisement.price %>€</h2>
+        <!--  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+      </div>
+    </div>
+    <!--------------------------------- SHOW COMMENTS ------------------------------->
+    <p id="notice"><%= notice %></p>
+    <div class="d-flex">
+      <h1 class="mr-4">Comments</h1>
+      <%= link_to 'New Comment', new_advertisement_comment_path(@advertisement), class: 'btn btn-flat' %>
+    </div>
+    <% @advertisement.comments.each do |comment| %>
+    <div class="card-product mt-4 mb-4">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos d-flex align-items-center justify-content-between">
+        <div>
+          <h2 class="mb-2">Commented By <%= comment.user.name.capitalize %></h2>
+          <p><%= comment.content.capitalize %></p>
+        </div>
+        <div class="d-flex flex-column">
+          <!--<% if current_user != nil && current_user.name == comment.user.name %>
+            <p style="margin: 0.2em"></p>
+          <% end %>-->
+          <!--<p style="margin: 0.2em"><%= link_to 'Show', advertisement_comment_path(@advertisement), class: 'btn btn-flat btn-show' %></p>
+          <% if current_user != nil && current_user.role == "admin" %>
+          <p style="margin: 0.2em"></p>
+          <% end %>-->
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <!-------------------------------------- END ------------------------------------>
+  </div>
+  <div>
