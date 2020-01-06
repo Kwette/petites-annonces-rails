@@ -1,8 +1,8 @@
 <div class="container-show ">
   <!--------------------------------- ADVERTISEMENTS ------------------------------->
   <h1 class="pb-4">Advertisements <span class="ml-4"><%= link_to "Publish yours", new_advertisement_path, class: 'btn btn-flat ml-0' %></span> </h1>
-  <% @advertisements.each do |advertisement|  %>
-  <!-------------------------------- INDEX FOR GUEST ------------------------------->
+  <% @advertisements.each do |advertisement| %>
+  <!---------------------------- INDEX FOR GUEST ---------------------------->
   <% if current_user == nil || current_user.role != "admin"  %>
   <% if advertisement.state == "published" %>
   <div class="card-product mt-4 mb-4">
